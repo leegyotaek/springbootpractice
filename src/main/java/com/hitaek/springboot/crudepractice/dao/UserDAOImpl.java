@@ -53,13 +53,11 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User save(User user) {
+    public void save(User user) {
 
         Session currentSession = entityManager.unwrap(Session.class);
 
         currentSession.saveOrUpdate(user);  // if id==0이면 save if not 일 경우 update
-
-        return user;
 
     }
 
